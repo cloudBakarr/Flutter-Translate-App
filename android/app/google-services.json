@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "227345444213",
+    "project_id": "cloudbakar",
+    "storage_bucket": "cloudbakar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227345444213:android:f723baadd018d2b4a3773c",
+        "android_client_info": {
+          "package_name": "com.flutterflow.edriveapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227345444213-1ng0lv239a5pprm17sk1jrcds50gbs8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6f_kQ091A-TWEYXbli32qmxW8y73AAgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227345444213-1ng0lv239a5pprm17sk1jrcds50gbs8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
