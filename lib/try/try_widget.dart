@@ -9,6 +9,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:translator/translator.dart';
 
 class TryWidget extends StatefulWidget {
   const TryWidget({Key key}) : super(key: key);
@@ -19,16 +20,32 @@ class TryWidget extends StatefulWidget {
 
 class _TryWidgetState extends State<TryWidget> {
   TextEditingController textController;
+  String input , output;
+  GoogleTranslator translator = new GoogleTranslator();
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  void translat(){
+    input = textController.text;
+    translator.translate(input , to: 'ja').then((out){
+      setState(() {
+        output = out.toString();
+      });
+    });
+  }
+
+
+
 
   @override
   void initState() {
     super.initState();
     textController = TextEditingController();
+    input = "";
+    output = "";
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context ) {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFF0F161C),
@@ -182,7 +199,7 @@ class _TryWidgetState extends State<TryWidget> {
                     alignment: AlignmentDirectional(-0.05, -0.95),
                     child: FFButtonWidget(
                       onPressed: () {
-                        print('Button pressed ...');
+                        translat();
                       },
                       text: 'Translate',
                       options: FFButtonOptions(
@@ -212,7 +229,17 @@ class _TryWidgetState extends State<TryWidget> {
                         Align(
                           alignment: AlignmentDirectional(-0.65, 0.05),
                           child: Text(
-                            'Original:\n\n\nTranslation:',
+                            'Original:\n $input',
+                            style: FlutterFlowTheme.title2.override(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(-0.65, 0.05),
+                          child: Text(
+                            'Translation:\n $output',
                             style: FlutterFlowTheme.title2.override(
                               fontFamily: 'Lexend Deca',
                               color: Colors.white,
