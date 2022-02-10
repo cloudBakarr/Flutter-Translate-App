@@ -74,10 +74,10 @@ class _MyAppState extends State<MyApp> {
               child: SizedBox(
                 width: 50,
                 height: 50,
-                child: SpinKitCubeGrid(
+                /*child: SpinKitCubeGrid(
                   color: FlutterFlowTheme.primaryColor,
                   size: 50,
-                ),
+                ),*/
               ),
             )
           : currentUser.loggedIn
